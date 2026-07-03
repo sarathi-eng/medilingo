@@ -1,0 +1,21 @@
+// MediLingua — Prisma schema (platform-required)
+// The platform's build.sh runs `prisma db push` against db/custom.db.
+// MediLingua's actual data lives in backend/data/platform.db (SQLAlchemy),
+// but this schema must exist for the platform build to succeed.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique
+  email     String   @unique
+  role      String   @default("user")
+  createdAt DateTime @default(now())
+}
