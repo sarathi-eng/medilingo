@@ -1,0 +1,13 @@
+/* MediLingua — minimal root layout styles.
+   The actual SPA styling lives in /public/app/css/*.css (loaded by index.html). */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #0b0f17;
+  color: #e6edf3;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
